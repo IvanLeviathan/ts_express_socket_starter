@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="sendMessage(event)">Click for test event</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io()
+      function sendMessage(e) {
+        socket.emit('message', 'Hello world')
+        console.log('socket event sended')
+        e.preventDefault()
+      }
+    </script>
+  </body>
+</html>
